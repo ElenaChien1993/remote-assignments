@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body {
+  margin: auto 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.nav-bar {
+  display: flex;
+  list-style: none;
+  font-size: 0.8em;
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  padding: 5px 15px;
+}
+
+a {
+  color: #EDEDDD;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #0A393C;
+}
+
+.zone {
+  color: #EDEDDD;
+  font-size: 2em;
+  /* border-radius: 4px; */
+  /* border: 1px solid #bbb; */
+}
+
+.header {
+  background: #9EB998;
+}
+
+.cover {
+  background-image: url("img/cover.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 65vh;
+}
+
+.gallery {
+  background: #67917D;
+}
+
+/* Grid */
+.grid-wrapper {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+}
+
+.box > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.box {
+  padding: 50px;
+  margin: 20px;
+}
+
+.contact {
+  background: #055F67;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact > h1 {
+  font-size: 1.5em;
+  margin: 5px;
+  padding-top: 10px;
+}
+
+.contact > p {
+  margin: 5px;
+  font-size: 0.7em;
+}
+
+.footer {
+  background: #0A393C;
+  text-align: center;
+  font-size: 1em;
+}
+
+.footer > p {
+  margin: 0;
+  padding: 7px 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .box {
+    padding: 20px 30px;
+    margin: 10px;
+  }
+}
