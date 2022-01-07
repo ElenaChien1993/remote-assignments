@@ -82,3 +82,28 @@ body {
   }
 }
 ```
+## 全域忽略 .DS_Store 文件
+
+[[筆記] Git 忽略 .DS_Store 等排除檔案 @地瓜大的飛翔旅程](https://smlpoints.com/notes-git-ignore-ds_store-files-and-so-on-gitignore.html)
+
+[[Day6] Git版本控制 - 基本操作篇 （MacOS） - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/articles/10263959?sc=hot)
+
+1. 終端機回到根目錄（使用者），新增 ~/.gitignore_global 檔案
+    
+    `$ touch ~/.gitignore_global`
+    
+2. 用文字編輯器編輯該檔案，新增 .DS_Store 至檔案中
+    
+    `$ vi ~/.gitignore_global`
+    
+    點擊 `i` 開始編輯，編輯完後按 esc 再輸入 `:wq` 儲存並離開
+    
+3. 在終端機輸入以下指令
+    
+    `git config --global core.excludesfile ~/.gitignore_global`
+    
+4. 因為之前已有 DS_Store 檔案，故回到資料夾中刪除
+    
+    `git rm --cached .DS_Store`
+    
+5. commit 修改並推上 github，完成！
