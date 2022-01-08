@@ -48,8 +48,6 @@ body {
 
 用 `flex` 結合 `margin: auto;` 
 
-![截圖 2022-01-07 下午2.19.36.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/26ba5e1d-9821-489f-b8be-f96c099697ce/截圖_2022-01-07_下午2.19.36.png)
-
 ```css
 .container {
 	display: flex;
