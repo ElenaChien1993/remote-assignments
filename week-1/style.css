@@ -219,6 +219,6 @@ footer p {
   }
   
   .secondary {
-    order: -1;
+  	order: -1;
   }
 }
