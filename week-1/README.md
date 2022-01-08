@@ -1,10 +1,12 @@
-## DEMO page
+### DEMO page
 
 [Remote Assignments - Week 1](https://elenachien1993.github.io/remote-assignments/week-1/)
 
 ## 前言碎念
 
-想嘗試不用 template 從頭寫個簡單網頁，所以參照之前上過的課程，採用此架構去呈現
+~~想嘗試不用 template 從頭寫個簡單網頁，所以參照之前上過的課程，採用此架構去呈現~~
+
+後來發現真的是太醜，用 CSS 課程中的 layout 改寫
 
 ## 學習筆記
 
@@ -30,58 +32,46 @@
 
 先直接寫出 4 個 div 區塊，再詳細修改該區塊應該是什麼樣子
 
-### 消除網頁預設的留邊空白
+### 消除網頁預設的留邊空白以及設定 border-box
 
 ```css
+* {
+	box-sizing: border-box;
+}
+
 body {
-  margin: auto 0;
+	margin: 0;
 }
 ```
 
-### 設定 cover 背景圖片
+### 做 nav bar 小技巧
+
+用 `flex` 結合 `margin: auto;` 
+
+![截圖 2022-01-07 下午2.19.36.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/26ba5e1d-9821-489f-b8be-f96c099697ce/截圖_2022-01-07_下午2.19.36.png)
 
 ```css
-.cover {
-  background-image: url("img/cover.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 65vh;
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
 }
+
+.item-1 {
+  margin-right: auto; /* 置右對齊 */
+} 
 ```
 
-### 設定 grid
+### 用 mobile first approch
+
+先寫出行動裝置的排版樣式，再用 media query 來寫大螢幕
 
 ```css
-.grid-wrapper {
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-}
-
-.box > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.box {
-  padding: 50px;
-  margin: 20px;
+@media (min-width: 769px) {
+	/* 修改內容 */
 }
 ```
 
-### 修改一下 RWD 樣式
-
-因為覺得當螢幕變窄後，grid 圖片間距過大，所以略加調整
-
-```css
-@media only screen and (max-width: 600px) {
-  .box {
-    padding: 20px 30px;
-    margin: 10px;
-  }
-}
-```
 ## 全域忽略 .DS_Store 文件
 
 [[筆記] Git 忽略 .DS_Store 等排除檔案 @地瓜大的飛翔旅程](https://smlpoints.com/notes-git-ignore-ds_store-files-and-so-on-gitignore.html)
