@@ -1,111 +1,224 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
+/* ================================= 
+  Base Element Styles
+==================================== */
+* {
+	box-sizing: border-box;
+}
+
 body {
-  margin: auto 0;
-  font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.6;
+	color: #3a3a3a;
+	margin: 0;
 }
 
-.nav-bar {
-  display: flex;
-  list-style: none;
-  font-size: 0.8em;
+ul {
   margin: 0;
-  justify-content: flex-end;
+  padding: 0;
+  list-style: none;
 }
 
-.fixed-top {
-  position: fixed;
-  top: 0;
-  width: 100%;
+p {
+	font-size: .95em;
+	margin-bottom: 1em;
+	margin-top: 0;
+	text-align: center;
 }
 
-li {
-  padding: 5px 15px;
+h2,
+h3,
+a {
+	color: #093a58;
+}
+
+h1 {
+	padding: .3em 0;
+}
+
+h1,
+h2,
+h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: center;
 }
 
 a {
-  color: #EDEDDD;
-  text-decoration: none;
+	text-decoration: none;
 }
 
-a:hover {
-  cursor: pointer;
-  color: #0A393C;
-}
-
-.zone {
-  color: #EDEDDD;
-  font-size: 2em;
-  /* border-radius: 4px; */
-  /* border: 1px solid #bbb; */
-}
-
-.header {
-  background: #9EB998;
-}
-
-.cover {
-  background-image: url("img/cover.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 65vh;
-}
-
-.gallery {
-  background: #67917D;
-}
-
-/* Grid */
-.grid-wrapper {
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-}
-
-.box > img {
-  width: 100%;
-  height: 100%;
+img {
+	max-width: 100%;
   object-fit: cover;
 }
 
-.box {
-  padding: 50px;
-  margin: 20px;
+footer p {
+	margin-bottom: 0;
 }
 
-.contact {
-  background: #055F67;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.name {
+	font-size: 1.35em;
+	margin: 0;
 }
 
-.contact > h1 {
-  font-size: 1.5em;
-  margin: 5px;
-  padding-top: 10px;
+.main-nav {
+	margin-top: 5px;
 }
 
-.contact > p {
-  margin: 5px;
-  font-size: 0.7em;
+.name ,
+.main-nav a {
+	text-align: center;
+	display: block;
+	padding: 10px 15px;
 }
 
-.footer {
-  background: #0A393C;
-  text-align: center;
-  font-size: 1em;
+.main-nav a {
+	font-size: .95em;
+	color: #67917D;
+	text-transform: uppercase;
 }
 
-.footer > p {
-  margin: 0;
-  padding: 7px 0px;
+.main-nav a:hover {
+	color: #0A393C;
 }
 
-@media only screen and (max-width: 600px) {
-  .box {
-    padding: 20px 30px;
-    margin: 10px;
+/* ---- Layout Containers ---- */
+
+.main-header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+.banner,
+.main-footer {
+	text-align: center;
+}
+
+.banner {
+	color: #fff;
+	background: #9EB998;
+	padding: 3.2em 0;
+	margin-bottom: 48px;
+}
+
+.img-container {
+	height: 50vh;
+	margin-bottom: 10px;
+}
+
+.col {
+	padding-right: 1em;
+	padding-left: 1em;
+}
+
+.main-contact {
+	background: #0A393C;
+	color: #EDEDDD;
+}
+
+.main-footer {
+	background: #d9e4ea;
+	padding: 1em 0;
+}
+
+/* ---- Page Elements ---- */
+.logo {
+	width: 300px;
+	border-radius: 50px;
+}
+
+.headline {
+	margin-bottom: 0;
+}
+
+.feat-img {
+	border-radius: 5px;
+  height: 100%;
+	width: 100%;
+  overflow: hidden;
+}
+
+.main-contact p {
+	margin-bottom: 0;
+	padding-bottom: 5px;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+	.main-header,
+	.row {
+		width: 90%;
+		margin: 0 auto;
+  }
+  
+  .main-header,
+  .main-nav,
+  .row {
+    display: flex;
+  }
+  
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+	.headline {
+		font-size: 2.3em;
+	}
+
+	.tagline {
+		font-size: 1.4em;
+	}
+  
+  .row {
+    flex-wrap: wrap;
+  }
+  
+  .col {
+    flex: 1 50%;
+  }
+	
+	.main-contact h1 {
+		font-size: 2.5em;
+	}
+	
+	.main-contact p {
+		font-size: 1.5em;
+	}
+}
+
+@media (min-width: 1025px) {
+	.main-header,
+	.row {
+		width: 80%;
+		max-width: 1150px;
+	}
+  
+  .main-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .col {
+    flex: 1 0;
+  }
+  
+  .primary {
+    flex: 1.4;
+  }
+  
+  .secondary {
+    order: -1;
   }
 }

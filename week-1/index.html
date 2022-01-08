@@ -9,23 +9,72 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   </head>
   <body>
-    <nav class="zone header fixed-top">
-      <ul class="nav-bar">
-        <li><a href="#cover">Cover</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
+    <header class="main-header">
+      <h1 class="name">Animal Shelter</h1>
+      <ul class="main-nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
-    <div class="zone cover" id="cover">Cover</div>
-    <div class="zone gallery grid-wrapper" id="gallery">
-      <div class="box zone"><img src="img/grid-1.jpg" alt="cute dog-1"></div>
-      <div class="box zone"><img src="img/grid-2.jpg" alt="cute dog-2"></div>
-      <div class="box zone"><img src="img/grid-3.jpg" alt="cute dog-3"></div>
-      <div class="box zone"><img src="img/grid-4.jpg" alt="cute dog-4"></div>
-      <div class="box zone"><img src="img/grid-5.jpg" alt="cute dog-5"></div>
-      <div class="box zone"><img src="img/grid-6.jpg" alt="cute dog-6"></div>
-    </div>
-    <div class="zone contact" id="contact">
+    </header><!--/.main-header-->
+
+    <div class="banner" id="about">
+      <img class="logo" src="img/cover.jpg" alt="dog">
+      <h1 class="headline">You are their whole world.</h1>
+      <span class="tagline">The best smile you have ever seen.</span>
+    </div><!--/.banner-->
+
+    <div class="row" id="gallery">
+      <div class="col">
+        <div class="img-container">
+          <img class="feat-img" src="img/grid-1.jpg" alt="Henry">
+        </div>
+        <h2>Henry</h2>
+        <p>Vaccinations up to date, spayed / neutered.</p>
+      </div>
+
+      <div class="col">
+        <div class="img-container">
+          <img class="feat-img" src="img/grid-2.jpg" alt="Hiro">
+        </div>
+        <h2>Hiro</h2>
+        <p>Young / Female / Small</p>
+      </div>
+
+      <div class="col">
+        <div class="img-container">
+          <img class="feat-img" src="img/grid-3.jpg" alt="Miko">
+        </div>
+        <h2>Miko</h2>
+        <p>Puppy / Female / Small</p>
+      </div>
+
+      <div class="col">
+        <div class="img-container">
+          <img class="feat-img" src="img/grid-4.jpg" alt="Chameleon">
+        </div>
+        <h2>Chameleon</h2>
+        <p>Puppy / Female / Small</p>
+      </div>
+
+      <div class="col">
+        <div class="img-container">
+          <img class="feat-img" src="img/grid-5.jpg" alt="Saylem">
+        </div>
+        <h2>Saylem</h2>
+        <p>Puppy / Female / Small</p>
+      </div>
+
+      <div class="col">
+        <div class="img-container">
+          <img class="feat-img" src="img/grid-6.jpg" alt="Deering">
+        </div>
+        <h2>Deering</h2>
+        <p>Puppy / Female / Small</p>
+      </div>
+    </div><!--/.content-->
+
+    <div class="main-contact" id="contact">
       <h1>Contact</h1>
       <p>
         <i class="fa fa-envelope-open"></i>
@@ -35,9 +84,9 @@
         <i class="fas fa-phone"></i>
         0912-345-678
       </p>
-    </div>
-    <footer class="zone footer">
-      <p>&copy; Elena Chien</p>
+    </div><!--/.contact-->
+    <footer class="main-footer">
+      <p>&copy; 2022 Elena Chien</p>
     </footer>
   </body>
 </html>
