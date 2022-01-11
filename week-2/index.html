@@ -16,10 +16,22 @@
         <div class="bar2"></div>
         <div class="bar3"></div>
       </div>
+
+      <!-- Menu Overlay -->
+      <div class="overlay overlay-slide-right" id="overlay">
+        <nav>
+          <ul class="slide-out">
+            <li class="slide-out-1" id="nav-1"><a href="#about">ABOUT</a></li>
+            <li class="slide-out-2" id="nav-2"><a href="#gallery">GALLERY</a></li>
+            <li class="slide-out-3" id="nav-3"><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+
       <ul class="main-nav">
-          <li><a href="#about">About</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </header><!--/.main-header-->
 
@@ -29,9 +41,9 @@
       <span class="tagline">The best smile you have ever seen.</span>
     </div><!--/.banner-->
 
-    <div class="main-content">
+    <div class="main-content" id="gallery">
       <h1>Our Family</h1>
-      <div class="row" id="gallery">
+      <div class="row" id="gallery-1">
         <div class="col">
           <div class="img-container">
             <img class="feat-img" src="img/grid-1.jpg" alt="Henry">
@@ -64,12 +76,8 @@
           <p>Puppy / Female / Small</p>
         </div>
       </div>
-      
-      <div class="btn-container">
-        <button id="btn" class="btn">See More</button>
-      </div>
 
-      <div class="row secondary">
+      <div class="row secondary" id="gallery-2">
         <div class="col">
           <div class="img-container">
             <img class="feat-img" src="img/grid-5.jpg" alt="Saylem">
@@ -88,21 +96,25 @@
 
         <div class="col">
           <div class="img-container">
-            <img class="feat-img" src="img/grid-5.jpg" alt="Saylem">
+            <img class="feat-img" src="img/grid-7.jpg" alt="Saylem">
           </div>
-          <h2>Saylem</h2>
-          <p>Puppy / Female / Small</p>
+          <h2>Happy</h2>
+          <p>Puppy / Male / Medium</p>
         </div>
 
         <div class="col">
           <div class="img-container">
-            <img class="feat-img" src="img/grid-6.jpg" alt="Deering">
+            <img class="feat-img" src="img/grid-8.jpg" alt="Deering">
           </div>
-          <h2>Deering</h2>
-          <p>Puppy / Female / Small</p>
+          <h2>Jumpy</h2>
+          <p>Dog / Male / Large</p>
         </div>
       </div>
     </div><!--/.content-->
+
+    <div class="btn-container">
+      <button id="btn" class="btn">See More</button>
+    </div>
 
     <div class="main-contact" id="contact">
       <h1>Contact</h1>

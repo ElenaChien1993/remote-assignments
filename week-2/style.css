@@ -14,6 +14,11 @@ body {
 	margin: 0;
 }
 
+nav ul li {
+  height: 3rem;
+  overflow: hidden;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -92,7 +97,9 @@ footer p {
 
 /* Menu Bars */
 .menu-bars {
+	/* position: fixed; */
   cursor: pointer;
+	z-index: 10;
 }
 
 .bar1,
@@ -103,6 +110,48 @@ footer p {
   background-color: #0A393C;
   margin: 8px 0;
   transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: rotate(-45deg) translate(-7px, 8px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.overlay {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+	transform: translateX(50vw);
+}
+
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(0);
+}
+
+.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(50vw);
+}
+
+.slide-out a {
+	padding: 1.5rem;
+	position: relative;
+  top: 45%;
 }
 
 /* ---- Layout Containers ---- */
@@ -168,6 +217,10 @@ footer p {
 
 .headline {
 	margin-bottom: 0;
+}
+
+.headline:hover {
+	cursor: pointer;
 }
 
 .feat-img {
@@ -260,6 +313,10 @@ footer p {
 
 	.feat-img {
 		object-position: center -80px;
+	}
+
+	.overlay {
+		display: none;
 	}
 }
 
