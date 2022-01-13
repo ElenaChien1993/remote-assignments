@@ -148,7 +148,7 @@ footer p {
   transform: translateX(50vw);
 }
 
-.slide-out a {
+#overlay a {
 	padding: 1.5rem;
 	position: relative;
   top: 45%;
@@ -176,6 +176,7 @@ footer p {
 	background: #9EB998;
 	padding: 3.2em 0;
 	margin-bottom: 15px;
+	cursor: pointer;
 }
 
 .img-container {

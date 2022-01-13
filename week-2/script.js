@@ -1,4 +1,5 @@
 const heading = document.querySelector('.headline');
+const banner = document.getElementById('about');
 const menuBars = document.getElementById('menu-bars');
 const overlayMenu = document.getElementById('overlay');
 const nav1 = document.getElementById('nav-1');
@@ -36,7 +37,7 @@ const showMore = () => {
   btn.textContent = isHidden ? 'See More' : 'See Less';
 }
 
-heading.addEventListener('click', headingChange);
+banner.addEventListener('click', headingChange);
 menuBars.addEventListener('click', toggleNav);
 navItems.forEach(item => {
   item.addEventListener('click', toggleNav);
