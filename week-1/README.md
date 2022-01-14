@@ -69,6 +69,73 @@ body {
 	/* 修改內容 */
 }
 ```
+## 【補】忽略了上週的作業要求....
+
+### menu bars 和 nav list 的轉換
+
+小螢幕用 menu bars；大螢幕用 nav list 呈現
+
+[How To Create a Menu Icon](https://www.w3schools.com/howto/howto_css_menu_icon.asp)
+
+1. 新增 menu bars 區塊
+2. 先將 nav list 設定為 `display: none;`
+3. 在 media query 中換把 menu bars 隱藏，並恢復 nav list 設定為 `display: flex;`
+
+### 新增 CTA 按鈕
+
+```css
+.btn-container {
+	width: 90%;
+	margin: 1rem auto;
+	display: flex;
+	justify-content: center;
+}
+
+.btn {
+	text-align: center;
+	cursor: pointer;
+	font-size: 1.2rem;
+	height: 2rem;
+	border: none;
+	border-radius: 10px;
+	color: #fff;
+	background: #9EB998;
+	outline: none;
+	padding: 0.5rem 1.8rem;
+	box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
+}
+	
+.btn:hover {
+	filter: brightness(90%);
+}
+
+.btn:active {
+	transform: translate(0, 0.3rem);
+	box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+}
+```
+
+### 讓欄位在最大螢幕時維持兩欄位，並限制最大寬度不超過 1200px
+
+```css
+@media (min-width: 1200px) {
+	.main-header,
+	.row {
+		width: 80%;
+		max-width: 1150px;
+	}
+  
+  .main-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .col {
+		max-width: 600px;
+    flex: 1 50%;
+  }
+}
+```
 
 ## 全域忽略 .DS_Store 文件
 

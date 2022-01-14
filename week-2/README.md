@@ -1,97 +1,149 @@
 ### DEMO page
 
-[Remote Assignments - Week 1](https://elenachien1993.github.io/remote-assignments/week-1/)
+[Remote Assignments - Week 2](https://elenachien1993.github.io/remote-assignments/week-2/)
 
-## 前言碎念
+## 作業項目
 
-~~想嘗試不用 template 從頭寫個簡單網頁，所以參照之前上過的課程，採用此架構去呈現~~
+- 完成 4 題 JS 題目
+- 延續 Week 1 作業，新增三項要求功能
 
-後來發現真的是太醜，用 CSS 課程中的 layout 改寫
+## 延續 Week 1 網頁
+
+### **Request 1: Click to Change Text.**
+
+將 heading 製作成點擊便可來回切換文字的區塊
+
+```jsx
+const heading = document.querySelector('.headline');
+
+let toggleHeading = false;
+
+const headingChange = () => {
+  heading.textContent = toggleHeading ? 'You are their whole world.' : 'Hope you have a great day!';
+  toggleHeading = !toggleHeading;
+};
+
+heading.addEventListener('click', headingChange);
+```
+
+### **Request 2: Click to Show/Close Menu.**
+
+1. menuBars 點擊後變叉叉（動畫呈現）
+    
+    先設定好 CSS 樣式，再用 eventListener toggle classList
+    
+    ```css
+    /* Rotate first bar */
+    .change .bar1 {
+      transform: rotate(-45deg) translate(-7px, 8px);
+    }
+    
+    /* Fade out the second bar */
+    .change .bar2 {
+      opacity: 0;
+    }
+    
+    /* Rotate last bar */
+    .change .bar3 {
+      transform: rotate(45deg) translate(-6px, -8px);
+    }
+    ```
+    
+    ```jsx
+    const menuBars = document.getElementById('menu-bars');
+    
+    const toggleNav = () => {
+      // Toggle: Menu Bars Open/Closed
+      menuBars.classList.toggle('change');
+    };
+    
+    menuBars.addEventListener('click', toggleNav);
+    ```
+    
+2. 做 Menu 的側邊欄，一樣用 eventListener toggle classList
+    
+    製作側邊欄，並用 overlay 讓他蓋在網頁之上，並先將位置設定為視窗外，
+    再設定滑進來和滑出去的 CSS 樣式
+    
+    ```css
+    .overlay {
+      position: fixed;
+      z-index: 9;
+      top: 0;
+      right: 0;
+      width: 50vw;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.8);
+    	**transform: translateX(50vw);**
+    }
+    
+    .overlay-slide-left {
+      transition: all 0.8s ease-in-out;
+      transform: translateX(0);
+    }
+    
+    .overlay-slide-right {
+      transition: all 0.4s ease-in-out;
+      transform: translateX(50vw);
+    }
+    ```
+    
+    ```jsx
+    const overlayMenu = document.getElementById('overlay');
+    const nav1 = document.getElementById('nav-1');
+    const nav2 = document.getElementById('nav-2');
+    const nav3 = document.getElementById('nav-3');
+    const navItems = [nav1, nav2, nav3];
+    
+    const toggleNav = () => {
+      // Toggle: Menu Bars Open/Closed
+      menuBars.classList.toggle('change');
+      // Toggle: Menu Active
+      overlay.classList.toggle('overlay-active');
+      if (overlay.classList.contains('overlay-active')) {
+        overlay.classList.replace('overlay-slide-right', 'overlay-slide-left');
+      } else {
+        overlay.classList.replace('overlay-slide-left', 'overlay-slide-right');
+      }
+    };
+    
+    navItems.forEach(item => {
+      item.addEventListener('click', toggleNav);
+    })
+    ```
+    
+
+### **Request 3: Click to Show More Content Boxes.**
+
+將按鈕串接 eventListener 控制第二內容的顯示 / 隱藏
+
+先將第二內容用 CSS `display: none;` 隱藏，在 toggle 該 CSS
+
+```jsx
+const gallery2 = document.getElementById('gallery-2');
+const btn = document.getElementById('btn');
+
+// Toggle btn wording
+let isHidden = true;
+
+const showMore = () => {
+  gallery2.classList.toggle('secondary');
+  isHidden = !isHidden;
+  btn.textContent = isHidden ? 'See More' : 'See Less';
+}
+
+btn.addEventListener('click', showMore);
+```
 
 ## 學習筆記
 
-### HTML 空白 template
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-		<script src="index.js"></script>
-  </body>
-</html>
-```
-
-### HTML 架構
-
-先直接寫出 4 個 div 區塊，再詳細修改該區塊應該是什麼樣子
-
-### 消除網頁預設的留邊空白以及設定 border-box
-
-```css
-* {
-	box-sizing: border-box;
-}
-
-body {
-	margin: 0;
-}
-```
-
-### 做 nav bar 小技巧
-
-用 `flex` 結合 `margin: auto;` 
-
-```css
-.container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-}
-
-.item-1 {
-  margin-right: auto; /* 置右對齊 */
-} 
-```
-
-### 用 mobile first approch
-
-先寫出行動裝置的排版樣式，再用 media query 來寫大螢幕
-
-```css
-@media (min-width: 769px) {
-	/* 修改內容 */
-}
-```
-
-## 全域忽略 .DS_Store 文件
-
-[[筆記] Git 忽略 .DS_Store 等排除檔案 @地瓜大的飛翔旅程](https://smlpoints.com/notes-git-ignore-ds_store-files-and-so-on-gitignore.html)
-
-[[Day6] Git版本控制 - 基本操作篇 （MacOS） - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/articles/10263959?sc=hot)
-
-1. 終端機回到根目錄（使用者），新增 ~/.gitignore_global 檔案
+- `textContent` vs `innerText`
     
-    `$ touch ~/.gitignore_global`
+    [Node.textContent - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent#differences_from_innertext)
     
-2. 用文字編輯器編輯該檔案，新增 .DS_Store 至檔案中
+    [Difference between textContent vs innerText](https://stackoverflow.com/questions/35213147/difference-between-textcontent-vs-innertext/50406907#50406907)
     
-    `$ vi ~/.gitignore_global`
-    
-    點擊 `i` 開始編輯，編輯完後按 esc 再輸入 `:wq` 儲存並離開
-    
-3. 在終端機輸入以下指令
-    
-    `git config --global core.excludesfile ~/.gitignore_global`
-    
-4. 因為之前已有 DS_Store 檔案，故回到資料夾中刪除
-    
-    `git rm --cached .DS_Store`
-    
-5. commit 修改並推上 github，完成！
+    1. When you are trying to alter the text, `textContent` is usually the property you are looking for.
+    2. When you are trying to grab text from some element, `innerText` approximates the text the user would get if they highlighted the contents of the element with the cursor and then copied to the clipboard. And `textContent` gives you everything, visible or hidden, including `<script>` and `<style>` elements.
+    3. Since `innerText` takes CSS styles into account, reading the value of `innerText` triggers a [reflow](https://developer.mozilla.org/en-US/docs/Glossary/Reflow) to ensure up-to-date computed styles. (Reflows can be computationally expensive, and thus should be avoided when possible.)
+
