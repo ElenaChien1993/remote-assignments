@@ -16,11 +16,12 @@
 ```jsx
 const heading = document.querySelector('.headline');
 
-let toggleHeading = false;
+// Toggle header wording
+let toggleHeading = true;
 
 const headingChange = () => {
-  heading.textContent = toggleHeading ? 'You are their whole world.' : 'Hope you have a great day!';
   toggleHeading = !toggleHeading;
+  heading.textContent = toggleHeading ? 'You are their whole world.' : 'Hope you have a great day!';
 };
 
 heading.addEventListener('click', headingChange);
