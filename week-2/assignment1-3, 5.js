@@ -58,7 +58,7 @@ Assignment 3: Function, Array, and Object
 function avg(data) {
 	let totalPrice = 0;
   for (let i = 0; i < data.products.length; i++) {
-    totalPrice += Object.values(data)[1][i].price
+    totalPrice += data.products[i].price
     // console.log(totalPrice);
   }
   let avgPrice = totalPrice / data.products.length;
