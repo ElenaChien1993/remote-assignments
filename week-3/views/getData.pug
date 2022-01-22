@@ -1,0 +1,15 @@
+extends layout.pug 
+
+block content
+  include nav.pug
+  if (!number)
+    h2 Lack of Parameter.
+    p Please insert one query string pair at the end of URL.
+    p for example: /getData?number=10 
+  if (errMessage) 
+    h2 #{errMessage}
+  if (sum)
+    h2 Success!
+    p Sum-up value is #{sum}.
+  if (number)
+    p Your number is: #{number}.
