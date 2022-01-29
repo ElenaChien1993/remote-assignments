@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+/* ================================= 
+  Base Element Styles
+==================================== */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	line-height: 1.6;
+	color: #3a3a3a;
+	margin: 0;
+}
+
+nav ul li {
+  height: 3rem;
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+	font-size: .95em;
+	margin-bottom: 1em;
+	margin-top: 0;
+	text-align: center;
+}
+
+h2,
+h3,
+a {
+	color: #093a58;
+}
+
+h1 {
+	padding: .3em 0;
+}
+
+h1,
+h2,
+h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+  object-fit: cover;
+}
+
+footer p {
+	margin-bottom: 0;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.name {
+	font-size: 1.35em;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.main-nav {
+	display: none;
+}
+
+.main-nav a {
+	text-align: center;
+	display: block;
+	padding: 10px 15px;
+}
+
+.main-nav a {
+	font-size: .95em;
+	color: #67917D;
+	text-transform: uppercase;
+}
+
+.main-nav a:hover {
+	color: #0A393C;
+}
+
+/* Menu Bars */
+.menu-bars {
+	/* position: fixed; */
+  cursor: pointer;
+	z-index: 10;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: #0A393C;
+  margin: 8px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: rotate(-45deg) translate(-7px, 8px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.overlay {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+	transform: translateX(50vw);
+}
+
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(0);
+}
+
+.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(50vw);
+}
+
+#overlay a {
+	padding: 1.5rem;
+	position: relative;
+  top: 45%;
+}
+
+/* ---- Layout Containers ---- */
+
+.main-header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.banner,
+.main-footer {
+	text-align: center;
+}
+
+.banner {
+	color: #fff;
+	background: #9EB998;
+	padding: 3.2em 0;
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+
+.img-container {
+	height: 50vh;
+	margin-bottom: 10px;
+}
+
+.col {
+	padding-right: 1em;
+	padding-left: 1em;
+}
+
+.btn-container {
+	width: 90%;
+	margin: 1rem auto;
+	display: flex;
+	justify-content: center;
+}
+
+.secondary {
+	display: none;
+}
+
+.main-contact {
+	background: #0A393C;
+	color: #EDEDDD;
+}
+
+.main-footer {
+	background: #d9e4ea;
+	padding: 1em 0;
+}
+
+/* ---- Page Elements ---- */
+.logo {
+	width: 300px;
+	border-radius: 50px;
+}
+
+.headline {
+	margin-bottom: 0;
+}
+
+.headline:hover {
+	cursor: pointer;
+}
+
+.feat-img {
+	border-radius: 5px;
+  height: 100%;
+	width: 100%;
+  overflow: hidden;
+}
+
+.btn {
+	text-align: center;
+	cursor: pointer;
+	font-size: 1.2rem;
+	height: 2rem;
+	border: none;
+	border-radius: 10px;
+	color: #fff;
+	background: #9EB998;
+	outline: none;
+	padding: 0.5rem 1.8rem;
+	box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
+}
+	
+.btn:hover {
+	filter: brightness(90%);
+}
+
+.btn:active {
+	transform: translate(0, 0.3rem);
+	box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+}
+
+.main-contact p {
+	margin-bottom: 0;
+	padding-bottom: 5px;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+@media (min-width: 500px) {
+	.main-header,
+	.row {
+		width: 90%;
+		margin: 0 auto;
+  }
+  
+  .main-header,
+  .row {
+    display: flex;
+  }
+  
+	.headline {
+		font-size: 2.3em;
+	}
+
+	.tagline {
+		font-size: 1.4em;
+	}
+  
+  .row {
+    flex-wrap: wrap;
+  }
+  
+  .col {
+    flex: 1 50%;
+  }
+	
+	.main-contact h1 {
+		font-size: 2.5em;
+	}
+	
+	.main-contact p {
+		font-size: 1.5em;
+	}
+
+	.secondary {
+		display: none;
+	}
+}
+
+@media (min-width: 800px) {
+	.menu-bars {
+		display: none;
+	}
+
+	.main-nav {
+		display: flex;
+	}
+
+	.feat-img {
+		object-position: center -80px;
+	}
+
+	.overlay {
+		display: none;
+	}
+}
+
+@media (min-width: 1200px) {
+	.main-header,
+	.row {
+		width: 80%;
+		max-width: 1200px;
+	}
+  
+  .main-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .col {
+    flex: 1 50%;
+  }
+}
