@@ -2,4 +2,12 @@ extends layout.pug
 
 block content
   include nav.pug
-  h2 Hello, #{ name }! How are you today?
+  if (name)
+    h2 Hello #{name}, How are you today?
+  else
+    h2 Hi! Nice to meet you.
+      .input-container
+        form(action='/trackName', method="get")
+          label Please enter your name: 
+          input(type="text", name="name")
+          button(type="submit" class="button btn-submit") Submit

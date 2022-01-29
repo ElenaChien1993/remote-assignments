@@ -29,30 +29,16 @@ app.get('/getData', (req, res) => {
         sum += i;
       }
       template.sum = sum;
-      // res.json(template);
+      res.json(template);
     } else if (!number.match(regex)) {
       errMessage = 'Sorry, Wrong Parameter.';
       template.errMessage = errMessage;
+      res.render('getData', template);
     } 
   } else {
     errMessage = '';
+    res.render('getData', template);
   }
-
-  res.render('getData', template);
-})
-
-// getData JSON route
-app.get('/getData.json', (req, res) => {
-  const { number } = req.query;
-  const template = { number };
-
-  let sum = 0;
-  for (let i = 1; i <= number ; i++) {
-    sum += i;
-  }
-  template.sum = sum;
-
-  res.json(template);
 })
 
 // myName route
@@ -60,19 +46,17 @@ app.get('/myName', (req, res) => {
   const name = req.cookies.username;
   if (name) {
     res.render('myName', { name });
-  } else {
-    res.redirect('/trackName');
   }
+  res.render('myName');
 })
 
 // trackName route
 app.get('/trackName', (req, res) => {
   const { name } = req.query;
   if (!name) {
-    res.render('trackName');
+    res.redirect('/myName');
   } else if (name) {
     res.cookie('username', name);
-
     res.redirect('/myName');
   }
 })

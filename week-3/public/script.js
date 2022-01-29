@@ -31,7 +31,7 @@ const resetCalculator = () => {
 
 // API request
 async function getData (num) {
-  const url = `http://localhost:3000/getData.json?number=${num}`;
+  const url = `http://localhost:3000/getData?number=${num}`;
   const res = await fetch(url);
   const data = await res.json();
   

@@ -23,7 +23,6 @@ ul {
 
 a {
   text-decoration: none;
-  color: #f1e5cf;
 }
 
 p {
@@ -33,12 +32,12 @@ p {
   width: 60%;
 }
 
-button {
+.button {
   text-align: center;
   cursor: pointer;
   font-size: 1.2rem;
-  height: 3rem;
-  width: 400px;
+  height: 2rem;
+  width: 315px;
   max-width: 50%;
   border: none;
   border-radius: 10px;
@@ -50,11 +49,11 @@ button {
   margin: 1rem auto;
 }
 
-button:hover {
+.button:hover {
   filter: brightness(120%);
 }
 
-button:active {
+.button:active {
   transform: translate(0, 0.3rem);
   box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
 }
@@ -111,7 +110,12 @@ input {
 }
 
 #btn-result, #btn-reset {
+  height: 3rem;
   color: #e7c799;
+}
+
+.btn-submit {
+  height: 3rem;
 }
 
 #text-result {
