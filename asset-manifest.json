@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/remote-assignments/week-4/static/css/main.f0c3b431.css",
+    "main.js": "/remote-assignments/week-4/static/js/main.f9047013.js",
+    "static/media/grid-5.jpg": "/remote-assignments/week-4/static/media/grid-5.09727945480145406953.jpg",
+    "static/media/grid-7.jpg": "/remote-assignments/week-4/static/media/grid-7.ad2170eb0a6572ca9b96.jpg",
+    "static/media/grid-3.jpg": "/remote-assignments/week-4/static/media/grid-3.980b26bc0f36d839c507.jpg",
+    "static/media/grid-1.jpg": "/remote-assignments/week-4/static/media/grid-1.076e4dc76ad02d22b741.jpg",
+    "static/media/grid-6.jpg": "/remote-assignments/week-4/static/media/grid-6.c83f3471940fbd4be6a9.jpg",
+    "static/media/grid-2.jpg": "/remote-assignments/week-4/static/media/grid-2.9e0e32c8b006dadc84cc.jpg",
+    "static/media/grid-8.jpg": "/remote-assignments/week-4/static/media/grid-8.7ad3333d7a1e479fdd37.jpg",
+    "static/media/grid-4.jpg": "/remote-assignments/week-4/static/media/grid-4.b6d7c0a153a356330186.jpg",
+    "static/media/cover.jpg": "/remote-assignments/week-4/static/media/cover.550a9f3ce6bf5de6e8cc.jpg",
+    "index.html": "/remote-assignments/week-4/index.html",
+    "main.f0c3b431.css.map": "/remote-assignments/week-4/static/css/main.f0c3b431.css.map",
+    "main.f9047013.js.map": "/remote-assignments/week-4/static/js/main.f9047013.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0c3b431.css",
+    "static/js/main.f9047013.js"
+  ]
+}
